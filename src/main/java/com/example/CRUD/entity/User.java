@@ -6,41 +6,20 @@ import jakarta.persistence.*;
 @Table(name = "users")
 public class User {
 
-    @Id //Primary Key
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false) // NOT NULL 제약조건
     private String name;
 
-    @Column(nullable = false) // NOT NULL 제약조건
     private int age;
 
-    public User() {}
+    public Long getId() { return id; }
 
-    //편하게 객체 생성하려고 만든 생성자
-    public User(String name, int age) {
-        this.name = name;
-        this.age = age;
-    }
+    public String getName() { return name; }
 
-    public Long getId() {
-        return id;
-    }
+    public int getAge() { return age; }
 
-    public String getName() {
-        return name;
-    }
+    public void setName(String name) { this.name = name; }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
+    public void setAge(int age) { this.age = age; }
 }

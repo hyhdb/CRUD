@@ -1,4 +1,4 @@
-Spring Boot 기본기 & POST 요청 실습
+<h2>Spring Boot 기본기 & POST 요청 실습</h2>
 
 <h3>🚀 Day 1 — Spring Boot 기본기 & POST 요청 실습</h3>
 
@@ -104,3 +104,111 @@ Controller / Service 분리, JSON 입력, POST 요청 처리까지 실습
 - 콘솔 접속 경로 동작 확인
 
 - Day3에서 사용할 Entity·Repository 준비 단계 완료
+
+<h3>🚀 Day 3 — Entity · Repository 생성 & 게시글 등록·조회 기능 구현</h3>
+
+📦 Day 3 학습 목표
+
+- JPA Entity 생성 진행
+
+- Repository 인터페이스 구현
+
+- 게시글(Post) 데이터 저장·조회 기능 개발
+
+- POST / GET API 구축
+
+- Postman으로 게시글 CRUD 중 “등록 + 조회” 기능 검증 진행
+
+🧩 개발 내용
+
+- Post 엔티티를 만들어 JPA가 자동으로 테이블 생성하도록 설정 진행
+
+- 게시글 정보를 전달받는 PostDto 작성 진행
+
+- DB 저장 로직을 처리하는 PostService 구성 진행
+
+- 게시글 API 요청을 처리하는 PostController 구현 진행
+
+- H2 콘솔에서 실제 데이터 저장 여부 확인 진행
+
+📮 Postman 테스트
+
+✔ 게시글 등록 (POST)
+
+- URL: POST http://localhost:8080/posts
+
+- Body (raw / JSON):
+{
+"title": "첫 번째 글",
+"content": "본문 내용"
+}
+
+
+- 결과: 저장된 게시글 정보가 JSON 형태로 응답 반환 진행
+
+✔ 게시글 전체 조회 (GET)
+
+- URL: GET http://localhost:8080/posts
+
+- 결과: 저장된 게시글 목록이 배열 형태로 응답 반환 진행
+
+🗄️ H2 콘솔 확인
+
+- 접속 URL: http://localhost:8080/h2-console
+
+- JDBC URL: jdbc:h2:mem:testdb
+
+- 테이블 목록에서 POSTS 테이블 생성 여부 확인 진행
+
+- SELECT * FROM POSTS 실행해 데이터 저장 상태 확인 진행
+
+📁 현재까지 패키지 구조
+
+```bash
+📦 src
+ └─📁 main
+     └─📁 java
+         └─📁 com.example.CRUD
+             ├─📁 config
+             │   └─📄 SecurityConfig.java
+             │
+             ├─📁 controller
+             │   ├─📄 HelloController.java
+             │   ├─📄 PostController.java
+             │   └─📄 UserController.java
+             │
+             ├─📁 dto
+             │   ├─📄 PostDto.java
+             │   ├─📄 PostRequest.java
+             │   ├─📄 PostResponse.java
+             │   ├─📄 UserRequest.java
+             │   └─📄 UserResponse.java
+             │
+             ├─📁 entity
+             │   ├─📄 Post.java
+             │   └─📄 User.java
+             │
+             ├─📁 repository
+             │   ├─📄 PostRepository.java
+             │   └─📄 UserRepository.java
+             │
+             └─📁 service
+                 ├─📄 HelloService.java
+                 ├─📄 PostService.java
+                 └─📄 UserService.java
+
+```
+
+
+
+📘 Day 3 요약
+
+- JPA 기반 Entity·Repository 구성 완료
+
+- 게시글 등록 및 조회 API 개발 완료
+
+- Postman 요청 검증 완료
+
+- H2 콘솔에서 DB 동작 확인 완료
+
+- Day 4에서 “수정 · 삭제 API”를 추가해 CRUD 완성 예정

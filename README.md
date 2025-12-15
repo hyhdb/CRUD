@@ -212,3 +212,64 @@ Controller / Service 분리, JSON 입력, POST 요청 처리까지 실습
 - H2 콘솔에서 DB 동작 확인 완료
 
 - Day 4에서 “수정 · 삭제 API”를 추가해 CRUD 완성 예정
+
+
+<h3>🚀 Day 4 — 게시글 CRUD 완성</h3>
+
+📦 Day 4 학습 목표
+- 게시글 CRUD 전체 흐름 이해
+- URL PathVariable 기반 요청 처리
+- Service 계층에서 비즈니스 로직 분리
+- Postman으로 CRUD 전 과정 검증
+
+```bash
+Day 4에 수정한 패키지
+📦 src
+ └─📁 main
+     └─📁 java
+         └─📁 com.example.CRUD
+             ├─📁 controller
+             │   └─📄 PostController.java
+             │
+             ├─📁 entity
+             │   └─📄 Post.java
+             │
+             └─📁 service
+                 └─📄 PostService.java
+
+```
+
+🧱 구현 기능 목록
+- 게시글 등록 API 구현
+- 게시글 전체 조회 API 구현
+- 게시글 단건 조회 API 구현
+- 게시글 수정 API 구현
+- 게시글 삭제 API 구현
+
+🔄 요청 처리 흐름
+- Controller에서 HTTP 요청 수신
+- DTO를 통해 요청 데이터 전달
+- Service에서 비즈니스 로직 처리
+- Repository를 통해 DB 접근
+- Response DTO로 응답 데이터 반환
+
+📮 Postman 테스트 항목
+- 게시글 등록 요청 실행
+- 게시글 전체 조회 요청 실행
+- 게시글 단건 조회 요청 실행
+- 게시글 수정 요청 실행
+- 게시글 삭제 요청 실행
+- 모든 요청은 Postman을 통해 직접 검증 완료
+
+🚦 예외 처리 경험
+- 존재하지 않는 게시글 조회 시 오류 발생 확인
+- PathVariable 이름 미지정으로 인한 500 에러 발생 경험
+- @PathVariable("id") 명시로 문제 해결 완료
+
+📘 Day 4 요약
+
+- 게시글 CRUD 전체 기능 구현 완료
+- Controller / Service / Repository 역할 분리 이해
+- REST API 기본 설계 방식 습득
+- Postman 기반 API 검증 능력 확보
+- 실무형 백엔드 구조 경험 완료

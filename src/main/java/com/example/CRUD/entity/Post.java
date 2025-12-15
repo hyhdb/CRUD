@@ -6,12 +6,12 @@ import jakarta.persistence.*;
 @Table(name = "posts")
 public class Post {
 
-    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; //계시글 ID(PK)
 
-    private String title;
-
-    private String content;
+    private String title; //제목
+    private String content; //내용
 
     public Long getId() { return id; }
 

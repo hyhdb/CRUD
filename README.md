@@ -338,3 +338,74 @@ Day 4에 수정한 패키지
 - REST API 응답 포맷 통일 완료
 - HTTP 상태 코드 의미에 대한 이해 강화
 - 실무형 API 설계 방식 경험 완료
+
+
+<h3>🚀 Day 6 — 회원(User) CRUD 연결</h3>
+
+📦 Day 6 학습 목표
+- User 도메인 추가
+- 게시글(Post)과 동일한 구조로 회원 CRUD 구현
+- Controller / Service / Repository / DTO / Entity 구조 재사용
+- 공통 예외 처리 및 응답 포맷 유지
+- Postman을 통한 전체 API 검증
+
+```bash
+📂 Day 5 수정 패키지 구조
+
+📦 src
+ └─📁 main
+     └─📁 java
+         └─📁 com.example.CRUD
+            ├─📁 controller
+            │  └─📄 UserController.java
+            │
+            ├─📁 service
+            │  └─📄 UserService.java        
+            │
+            ├─📁 entity
+            │  └─📄 User.java
+            │
+            └─📁 dto
+               ├─📄 UserRequest.java
+               └─📄 UserResponse.java
+
+```
+
+🧩 구현 기능 목록
+- 회원 등록 API 구현
+- 회원 전체 조회 API 구현
+- 회원 단건 조회 API 구현
+- 회원 정보 수정 API 구현
+- 회원 삭제 API 구현
+
+🔧 구현 특징
+- 게시글(Post) CRUD와 동일한 설계 패턴 적용
+- 요청(Request)과 응답(Response) DTO 분리 유지
+- Service 계층에서 비즈니스 로직 처리
+- Repository는 JpaRepository 기반으로 구성
+- 존재하지 않는 회원 접근 시 예외 처리 적용
+- 공통 응답 포맷(ApiResponse) 유지
+
+📮 Postman 테스트 항목
+
+✔ 회원 등록
+- POST /users
+
+✔ 회원 전체 조회
+- GET /users
+
+✔ 회원 단건 조회
+- GET /users/{id}
+
+✔ 회원 수정
+- PUT /users/{id}
+
+✔ 회원 삭제
+- DELETE /users/{id}
+
+📘 Day 6 요약
+- User 도메인 CRUD 기능 구현 완료
+- Post / User 도메인 구조 통일 완료
+- REST API 설계 흐름 체득
+- 공통 예외 처리 및 응답 구조 재사용
+- Day 7 인증/로그인 기능 확장을 위한 기반 완성
